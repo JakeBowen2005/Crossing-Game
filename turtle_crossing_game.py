@@ -30,12 +30,17 @@ while game_is_on:
 
     #check collison
     for car in car_manager.cars:
-        if ((car.xcor() - 10 < player.xcor() < car.xcor() + 10) and (car.ycor() -20 < player.ycor() < car.ycor() + 20)):
+        # if ((car.xcor() - 10 < player.xcor() < car.xcor() + 10) and (car.ycor() -20 < player.ycor() < car.ycor() + 20)):
+        if player.distance(car) < 20:
             game_is_on = False
 
     if player.ycor() > 270:
         scoreboard.update_score()
         player.reset()
         car_manager.new_level()
+
+game_over = t.Turtle()
+game_over.color("Red")
+game_over.write("GAME OVER", align="center", font=("Courier", 36, "normal"))
 
 screen.exitonclick()

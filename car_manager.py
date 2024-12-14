@@ -36,7 +36,7 @@ class CarManager(t.Turtle):
         self.cars.remove(car)
 
     def new_level(self):
-        self.car_speed += 0.5
+        self.car_speed += 0.4
         if self.rand_generator > 3:
-            self.rand_generator -= 3
+            self.rand_generator -= 2
 
